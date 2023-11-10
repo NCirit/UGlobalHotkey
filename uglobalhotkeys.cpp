@@ -165,8 +165,7 @@ bool UGlobalHotkeys::nativeEvent(const QByteArray &eventType,
 }
 
 #elif defined(Q_OS_LINUX)
-
-bool UGlobalHotkeys::nativeEventFilter(const QByteArray &eventType, void *message, long *result) {
+bool UGlobalHotkeys::nativeEventFilter(const QByteArray &eventType, void *message, qintptr *result) {
     Q_UNUSED(eventType);
     Q_UNUSED(result);
     return linuxEvent(static_cast<xcb_generic_event_t*>(message));
