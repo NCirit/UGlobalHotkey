@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.24)
+cmake_minimum_required(VERSION 3.5)
 
 project(uglobalhotkeys)
 
@@ -21,6 +21,6 @@ if(UNIX)
 target_link_libraries(${PROJECT_NAME} xcb xcb-keysyms)
 endif()
 set_target_properties(${PROJECT_NAME} PROPERTIES LINKER_LANGUAGE CXX AUTOMOC ON)
-target_compile_definitions(${PROJECT_NAME} 
+target_compile_definitions(${PROJECT_NAME}
   PRIVATE UGLOBALHOTKEY_NOEXPORT
 )
